@@ -1,0 +1,23 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Sandbox — auto-generated data (keep the folder via .gitkeep)
+sandbox/intel_data.json
+sandbox/generated_app.py
+sandbox/*_report.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
