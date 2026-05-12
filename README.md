@@ -36,8 +36,8 @@ All steps are orchestrated by an LLM (Gemini or Ollama) that decides which tool 
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                   run_intel_agent.py                     │
-│                  (Agentic Loop / Router)                 │
+│                   run_intel_agent.py                    │
+│                  (Agentic Loop / Router)                │
 │                                                         │
 │   ┌──────────────┐          ┌──────────────┐            │
 │   │  Gemini API  │    OR    │ Ollama Local │            │
@@ -50,27 +50,27 @@ All steps are orchestrated by an LLM (Gemini or Ollama) that decides which tool 
                       │ MCP (stdio transport)
                       ▼
 ┌─────────────────────────────────────────────────────────┐
-│                 intel_mcp_server.py                      │
-│                  (8 MCP Tools)                           │
+│                 intel_mcp_server.py                     │
+│                  (8 MCP Tools)                          │
 │                                                         │
 │  ┌────────────────┐  ┌────────────────┐                 │
 │  │ fetch_hackernews│  │  fetch_reddit  │  ← Internet    │
 │  └────────────────┘  └────────────────┘                 │
 │  ┌────────────────┐  ┌────────────────┐                 │
-│  │ save_sentiment │  │read_sentiment_ │  ← File CRUD   │
+│  │ save_sentiment │  │read_sentiment_ │  ← File CRUD    │
 │  │                │  │     log        │                 │
 │  └────────────────┘  └────────────────┘                 │
 │  ┌────────────────┐  ┌────────────────┐                 │
-│  │compare_topics  │  │generate_report │  ← Analysis    │
+│  │compare_topics  │  │generate_report │  ← Analysis     │
 │  └────────────────┘  └────────────────┘                 │
 │  ┌────────────────┐  ┌────────────────┐                 │
-│  │list_sandbox_   │  │  generate_ui   │  ← Output      │
+│  │list_sandbox_   │  │  generate_ui   │  ← Output       │
 │  │    files       │  │                │                 │
 │  └────────────────┘  └────────────────┘                 │
 │                         │                               │
 │                         ▼                               │
-│                    sandbox/                              │
-│              (all files confined here)                   │
+│                    sandbox/                             │
+│              (all files confined here)                  │
 └─────────────────────────────────────────────────────────┘
 ```
 
